@@ -1,0 +1,47 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    
+</head>
+<body>
+    <input id="Button1" type="button" value="连接" onclick="connect()" />
+    <div id="labe2"></div>
+    <br /><br /><!--style="display: none"-->
+    <video id="vid2" autoplay controls ></video>
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+    <script src="rtc_client.js"></script>
+    <script>
+        window.onbeforeunload = function () {
+            delPeerConn();
+        }
+        var t = null;
+        function connect()
+        {
+            if (document.getElementById('Button1').value == "连接") {
+                wsconnect();
+
+                if (t == null)
+                {
+                    //测试
+                    var testNum = 0;
+                    t = setInterval(function () {
+                        var sdata = {};
+                        sdata["socketId"] = cursocketId;
+                        sdata["content"] = "Hello RTC Client," + testNum++;
+                        if (document.getElementById('Button1').value == "断开")
+                            rtc_send(sdata);
+
+                    }, 1000);
+                }
+            }
+            else {
+                delPeerConn();
+            }
+        }
+        connect();
+    </script>
+</body>
+</html>

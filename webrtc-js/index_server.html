@@ -1,0 +1,63 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    
+</head>
+<body>
+    <div class="select">
+        <label for="audioSource">Audio input source: </label><select id="audioSource"></select>
+    </div>
+
+    <div class="select">
+        <label for="audioOutput">Audio output destination: </label><select id="audioOutput"></select>
+    </div>
+
+    <div class="select">
+        <label for="videoSource">Video source: </label><select id="videoSource"></select>
+    </div>
+
+    <input id="Button1" type="button" value="连接" onclick="connect()" />
+    <div id="labe2"></div>
+    <br /><br />
+    <video id="vidLocal" autoplay controls muted style="display: none"></video>
+
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+    <script src="rtc_server.js"></script>
+    <script>
+        var t = null;
+        function connect()
+        {
+            if (document.getElementById('Button1').value == "连接")
+            {
+                wsconnect();
+
+                //测试
+                if(t == null)
+                {
+                    var sendNum = 0;
+                    t = setInterval(function () {
+                        var connNum = 0;
+                        for (var socketId in dataChannels) {
+                            connNum++;
+                        }
+                        for (var socketId in dataChannels) {
+                            var sdata = {};
+                            sdata["content"] = "Hello RTC Server," + sendNum++ + ",server peerconn.num:" + connNum;
+                            rtc_send(sdata, socketId);
+                        }
+                    }, 1000);
+                }
+            }
+            else
+            {
+                delAllPeerConn();
+                document.getElementById('Button1').value = "连接";
+            }
+        }
+        connect();
+    </script>
+</body>
+</html>

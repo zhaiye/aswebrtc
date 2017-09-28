@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{337C58B3-9604-4169-A726-241FC0396390}</ProjectGuid>
+    <RootNamespace>webrtcwindows</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <ProjectName>webrtc-windows</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140_xp</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>include\third_party\libyuv\include;include\third_party\libvpx\source\libvpx;include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DEBUG;_DEBUG;WIN32;_CRT_SECURE_NO_WARNINGS;UNICODE;V8_DEPRECATION_WARNINGS;_WINDOWS;NOMINMAX;PSAPI_VERSION=1;_CRT_RAND_S;CERT_CHAIN_PARA_HAS_EXTRA_FIELDS;WIN32_LEAN_AND_MEAN;_ATL_NO_OPENGL;_SECURE_ATL;_HAS_EXCEPTIONS=0;_WINSOCK_DEPRECATED_NO_WARNINGS;CHROMIUM_BUILD;CR_CLANG_REVISION=274369-1;COMPONENT_BUILD;USE_AURA=1;USE_DEFAULT_RENDER_THEME=1;USE_LIBJPEG_TURBO=1;ENABLE_WEBRTC=1;ENABLE_MEDIA_ROUTER=1;ENABLE_PEPPER_CDMS;ENABLE_NOTIFICATIONS;FIELDTRIAL_TESTING_ENABLED;NO_TCMALLOC;__STD_C;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;NTDDI_VERSION=0x0A000000;_USING_V110_SDK71_;ENABLE_TASK_MANAGER=1;ENABLE_EXTENSIONS=1;ENABLE_PDF=1;ENABLE_PLUGIN_INSTALLATION=1;ENABLE_PLUGINS=1;ENABLE_SESSION_SERVICE=1;ENABLE_THEMES=1;ENABLE_PRINTING=1;ENABLE_BASIC_PRINTING=1;ENABLE_PRINT_PREVIEW=1;ENABLE_SPELLCHECK=1;ENABLE_CAPTIVE_PORTAL_DETECTION=1;ENABLE_SUPERVISED_USERS=1;ENABLE_MDNS=1;ENABLE_SERVICE_DISCOVERY=1;V8_USE_EXTERNAL_STARTUP_DATA;FULL_SAFE_BROWSING;SAFE_BROWSING_CSD;SAFE_BROWSING_DB_LOCAL;WEBRTC_WIN;USE_LIBPCI=1;_CRT_NONSTDC_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;DYNAMIC_ANNOTATIONS_ENABLED=1;WTF_USE_DYNAMIC_ANNOTATIONS=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link />
+    <Link>
+      <AdditionalLibraryDirectories>libd</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+      <ModuleDefinitionFile>webrtc-windows.def</ModuleDefinitionFile>
+      <AdditionalOptions>/FORCE:MULTIPLE /ignore:4099 /ignore:4006 %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <ModuleDefinitionFile>webrtcsdk.def</ModuleDefinitionFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WITH_WEBRTC;NDEBUG;WIN32;_CRT_SECURE_NO_WARNINGS;UNICODE;V8_DEPRECATION_WARNINGS;_WINDOWS;NOMINMAX;PSAPI_VERSION=1;_CRT_RAND_S;CERT_CHAIN_PARA_HAS_EXTRA_FIELDS;WIN32_LEAN_AND_MEAN;_ATL_NO_OPENGL;_SECURE_ATL;_HAS_EXCEPTIONS=0;_WINSOCK_DEPRECATED_NO_WARNINGS;CHROMIUM_BUILD;CR_CLANG_REVISION=274369-1;COMPONENT_BUILD;USE_AURA=1;USE_DEFAULT_RENDER_THEME=1;USE_LIBJPEG_TURBO=1;ENABLE_WEBRTC=1;ENABLE_MEDIA_ROUTER=1;ENABLE_PEPPER_CDMS;ENABLE_NOTIFICATIONS;FIELDTRIAL_TESTING_ENABLED;NO_TCMALLOC;__STD_C;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;NTDDI_VERSION=0x0A000000;_USING_V110_SDK71_;ENABLE_TASK_MANAGER=1;ENABLE_EXTENSIONS=1;ENABLE_PDF=1;ENABLE_PLUGIN_INSTALLATION=1;ENABLE_PLUGINS=1;ENABLE_SESSION_SERVICE=1;ENABLE_THEMES=1;ENABLE_PRINTING=1;ENABLE_BASIC_PRINTING=1;ENABLE_PRINT_PREVIEW=1;ENABLE_SPELLCHECK=1;ENABLE_CAPTIVE_PORTAL_DETECTION=1;ENABLE_SUPERVISED_USERS=1;ENABLE_MDNS=1;ENABLE_SERVICE_DISCOVERY=1;V8_USE_EXTERNAL_STARTUP_DATA;FULL_SAFE_BROWSING;SAFE_BROWSING_CSD;SAFE_BROWSING_DB_LOCAL;WEBRTC_WIN;USE_LIBPCI=1;_CRT_NONSTDC_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;DYNAMIC_ANNOTATIONS_ENABLED=1;WTF_USE_DYNAMIC_ANNOTATIONS=1;WITH_OPENSSL;WITH_FFMPEG;WITH_WEBSOCKET_CLIENT;WITH_WEBRTC_TURBOJPEG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include\third_party\libyuv\include;include\third_party\libvpx\source\libvpx;include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>lib</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>webrtc-windows.def</ModuleDefinitionFile>
+      <AdditionalOptions>/FORCE:MULTIPLE /ignore:4099 /ignore:4006 %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ModuleDefinitionFile>webrtcsdk.def</ModuleDefinitionFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="turbojpeg\TJpeg.cpp" />
+    <ClCompile Include="Webrtc\cJSON.c" />
+    <ClCompile Include="Webrtc\conductor.cc" />
+    <ClCompile Include="Webrtc\defaults.cc" />
+    <ClCompile Include="Webrtc\vp8_impl.cc" />
+    <ClCompile Include="Webrtc\yuvframegenerator.cc" />
+    <ClCompile Include="Webrtc\zy_thread.cpp" />
+    <ClCompile Include="zysdk.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="turbojpeg\TJpeg.h" />
+    <ClInclude Include="turbojpeg\turbojpeg.h" />
+    <ClInclude Include="Webrtc\cJSON.h" />
+    <ClInclude Include="Webrtc\conductor.h" />
+    <ClInclude Include="Webrtc\defaults.h" />
+    <ClInclude Include="Webrtc\internals.h" />
+    <ClInclude Include="Webrtc\zy_thread.h" />
+    <ClInclude Include="zysdk.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="webrtc-windows.def" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

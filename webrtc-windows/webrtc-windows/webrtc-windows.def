@@ -1,0 +1,27 @@
+LIBRARY "webrtc-windows"
+EXPORTS
+
+set_global_callback
+
+cjosnPackSend
+
+GetVideoDevices
+
+InitWebRtc
+UninitWebRtc
+OpenVideoCaptureDevice
+CreatPeerConnection
+StartPeerConnection
+StopPeerConnection
+AddServerConfig
+CreateOffer
+OnOfferReply
+OnOfferRequest
+AddIceCandidate
+CreateDataChannel
+DataChannelSendText
+DataChannelSendBuf
+RunStunServer
+RunTurnServer
+EncodeI420
+EncodeI420toBGR24

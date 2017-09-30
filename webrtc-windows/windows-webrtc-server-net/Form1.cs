@@ -22,7 +22,7 @@ namespace windows_webrtc_server_net
             InitializeComponent();
         }
         static string exthost = "webrtc.tgmaa.cn";
-        //https://webrtc.tgmaa.cn,创建新的ID
+        //https://webrtc.tgmaa.cn,创建私有ID
         static string UserID = "test";
         static string Password = "a9f696454710384bf228047acba4d5ef";
         static string StunIP1 = "stun:stun.l.google.com:19302";

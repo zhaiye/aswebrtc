@@ -13,7 +13,7 @@
 
 //信令服务
 var host = "webrtc.tgmaa.cn";
-//https://webrtc.tgmaa.cn,创建新的ID
+//https://webrtc.tgmaa.cn,创建私有ID
 var UserID = "test";
 var Password = "a9f696454710384bf228047acba4d5ef";
 
